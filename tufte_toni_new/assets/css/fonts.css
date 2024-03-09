@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "AveriaSerifLibre-Bold";
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+  src: url("../fonts/AveriaSerifLibre-Bold.woff") format("woff"), url("../fonts/AveriaSerifLibre-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "AveriaSerifLibre-BoldItalic";
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+  src: url("AveriaSerifLibre-BoldItalic.woff");
+  src: url("../fonts/AveriaSerifLibre-BoldItalic.woff") format("woff"), url("../fonts/AveriaSerifLibre-BoldItalic.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: "AveriaSerifLibre-Regular";
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+  /* src: url("BasierCircle-Bold.woff"); */
+  src: url("../fonts/AveriaSerifLibre-Regular.woff") format("woff"), url("../fonts/AveriaSerifLibre-Regular.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: "AveriaSerifLibre-Italic";
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+  /* src: url("PPNeueMontreal-SemiBolditalic.woff"); */
+  src: url("../fonts/AveriaSerifLibre-Italic.woff") format("woff"), url("../fonts/AveriaSerifLibre-Italic.woff2") format("woff2");
+
+  
+}
+
+@font-face {
+  font-family: "CrimsonText-Regular";
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+  /* src: url("PPNeueMontreal-SemiBolditalic.woff"); */
+  src: url("../fonts/CrimsonText-Regular.woff") format("woff"), url("../fonts/CrimsonText-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CrimsonText-Italic";
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+  /* src: url("PPNeueMontreal-SemiBolditalic.woff"); */
+  src: url("../fonts/CrimsonText-Italic.woff") format("woff"), url("../fonts/CrimsonText-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Arial-BoldMT";
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+  /* src: url("PPNeueMontreal-SemiBolditalic.woff"); */
+  src: url("../fonts/Arial-BoldMT.woff") format("woff"), url("../fonts/Arial-BoldMT.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "ArialMT";
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+  /* src: url("PPNeueMontreal-SemiBolditalic.woff"); */
+  src: url("../fonts/ArialMT.woff") format("woff"), url("../fonts/ArialMT.woff2") format("woff2");
+}
+

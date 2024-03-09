@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>GD3 Starterkit</title>
+  <link rel="stylesheet" href="assets/css/_reset.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- <link rel="stylesheet" href="tufte.css"> -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function slideDoors() {
+        document.querySelector('.leftdoor').style.transform = 'translateX(-100%)';
+        document.querySelector('.rightdoor').style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          document.querySelector('.beginning').classList.add('hidden');
+          document.querySelector('.rightdoor').classList.add('hidden');
+          document.querySelector('.leftdoor').classList.add('hidden');
+          document.querySelector('.open').style.pointerEvents = 'none';
+          document.body.style.overflow = 'auto'; // Allow scrolling again
+        }, 100); // Adjust the delay to match the door transition time
+      }
+
+      document.querySelector('.beginning').addEventListener('click', function () {
+        slideDoors();
+      });
+
+      // Event listeners for the doors
+      document.querySelector('.leftdoor').addEventListener('click', function () {
+        slideDoors();
+      });
+
+      document.querySelector('.rightdoor').addEventListener('click', function () {
+        slideDoors();
+      });
+    });
+
+    // –––
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var links = document.querySelectorAll('a[href^="#"]');
+
+      links.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          var targetId = this.getAttribute("href").slice(1);
+          var targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            var offset = targetElement.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: offset,
+              behavior: "smooth"
+            });
+          }
+        });
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('menuToggle');
+      const nav = document.querySelector('nav');
+
+      menuToggle.addEventListener('click', function () {
+        nav.classList.toggle('opened');
+        //nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
+      });
+    });
+
+
+
+  </script>
+
+</head>
+
+<body>
+  <div class="open">
+    <div class="beginning">Cabinets of Curiosities</div>
+    <div class="leftdoor" onclick="slideDoors()">
+      <div class="shape"></div>
+    </div>
+    <div class="rightdoor" onclick="slideDoors()">
+      <div class="shape"></div>
+    </div>
+
+  </div>
+  <div class="boxglow"></div>
+  <article>
+
+    <div class="parent">
+      <div class="column_left">
+        <nav class="navbar">
+          <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <ul>
+
+            <li class="navigation1"><a class="navigation1" href="#start">Thesis 2024</a></li>
+            <div class="list">
+              <li><a class="navigation" href="#intro">Introduction</a></li>
+            </div>
+            <div class="list">
+              <li class="small"> Chapter 1</li>
+              <li><a class="navigation" href="#chapter-1">Cabinets of Curiosities</a></li>
+            </div>
+            <div class="list">
+              <li class="small"> Chapter 2</li>
+              <li><a class="navigation" href="#chapter-2">Dollhouses</a></li>
+            </div>
+            <div class="list">
+              <li class="small"> Chapter 3</li>
+              <li><a class="navigation" href="#chapter-3">Houses of Curiosities</a></li>
+            </div>
+            <div class="list">
+              <li class="small"> Chapter 4</li>
+              <li><a class="navigation" href="#chapter-4">Contemporary Examples <br>and Digital Cabinets</a></li>
+            </div>
+            <li><a class="navigation" href="#conclusion">Conclusion</a></li>
+          </ul>
+        </nav>
+
+        <p id="menuToggle" class="hidden-on-large"></p>
+
+      </div>
+
+      <div class="column_main">
+        <div class="wrapper">
+          <div class="white">
+            <div class="text">
+
+
+              <h1 id="start"> Cabinets of Curiosities</h1>
+
+              <h2 id="intro">Introduction</h2>
+
+              <p class="text_introduction">
+                Looking at and playing with small toys was something I loved when I was a kid. I had
+                a whole collection of Schleich animals and my parents bought me a little vitrine where
+                I kept them. It wasn’t really a cabinet of curiosities, but a collection of miniatures. This
+                early interest of mine is what brought me to look closer at the origin of collecting.
+                Since the Middle Stone Age, humans have been carrying items of value with them.
+                Keeping resources for the future and being able to trade meant a more stable life – a
+                good incentive to start to accumulate objects. However, since there are so many
+                types of collections and collectors, a lot of theories exist on the reasons behind this
+                routine.<sup><a href="#ref14" class="footnote">1</a></sup> </p>
+
+
+              <p class="text_introduction">
+                Of course, a lot of collections had to do with the showcase of wealth. People were
+                collecting to gain admiration and respect from their community and to present their
+                good taste. A collection was something like a status symbol, however, this high
+                regard for collecting and the habit of exhibiting in museums was a very western
+                development. In other cultures, collectors were perceived as hoarders, and nobody
+                recognized the value of their collections.<sup><a href="#ref44" class="footnote">2</a></sup>
+                Others find satisfaction in the hunt for the objects. Browsing flea markets and
+                antiquity stores, negotiating a clever price and tracking down super rare pieces can
+                feel more rewarding and fun than owning the object in the end.
+              </p>
+              <p class="text_introduction">
+                Then there is the aspect of history and preservation. Many collectors have a feeling
+                of nostalgia when looking at old objects and want to keep these memories, which can
+                help to feel closer to one’s culture and ancestors. Historical collections also help us to
+                understand what was valuable in different time periods.<sup><a href="#ref29"
+                    class="footnote">3</a></sup>
+                Another drive behind collecting is the community and network people get when
+                starting this hobby. It is always nice to talk to peers with the same interest and to
+                share one’s passion with like-minded people. Collecting here becomes a social
+                activity.<sup><a href="#ref29" class="footnote">4</a></sup>
+                A big purpose of collecting is also the educational aspect. Collectors put a lot of time
+                and effort into their collections and by doing so, acquire a lot of knowledge about their topic of
+                interest. Collecting therefore can be seen as the human process of
+                trying to understand the world and make it one’s own.<sup><a href="#ref29" class="footnote">5</a></sup>
+              </p>
+              <p class="text_introduction">
+                Conclusively it can be said that through the routine of collecting, humans are trying to
+                connect: sometimes with themselves and in other cases with their community or the
+                world around them. We are searching for a sense of belonging, our place in the world
+                and deeper understanding of our own identity.<sup><a href="#ref14" class="footnote">6</a></sup>
+                Sometimes, a collection can serve as
+                a portal, transporting us into another world – be it the past, the future, or simply an
+                alternate reality we wish to inhabit. This thesis will investigate how collections reflect
+                our identities and visions of the world, starting with cabinets of curiosities.
+              </p>
+
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="wrapper">
+
+          <div class="white">
+            <div class="text">
+              <h2 id="chapter-1">Chapter 1</h2>
+              <h3 class="Chaptername"> Cabinets of Curiosities</h3>
+
+              <p class="text_thesis">
+                A little museum in a cabinet – that is how you could describe a Cabinet of Curiosities.
+                Also called “Kunst- or Wunderkammer”, this form of collecting started mostly in
+                northern Europe in the 16th and 17th century and its purpose was to amaze and wow
+                the viewer.<sup><a href="#ref9" class="footnote">7</a></sup> The wonder rooms were filled with all
+                kinds of objects, ranging from
+                artworks and animals to scientific tools. There were no rules regarding the
+                collections, however, the objects had one thing in common: they were rare, unusual,
+                and felt exotic.
+
+                Not all cabinets looked alike. While many pieces were displayed in real cabinets,
+                drawers and shelfs, other collectors had whole rooms dedicated to their collections. It
+                was men from the upper class who filled the cabinets: aristocrats, merchants and
+                scientific scholars, and numerous collections would later become part of famous
+                museums. The cabinets were the early stage of a modern museum.<sup><a href="#ref20"
+                    class="footnote">8</a></sup>
+              </p>
+
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/01_RitrattoMuseoFerranteImperato.jpg" target="_blank">
+                    <img src="content/01_RitrattoMuseoFerranteImperato.jpg" alt="Cabinet of Curiosity" />
+                    Dell’Historia Naturale by the apothecary Ferrante
+                    Imperato, 1599</a>
+                </span>
+                The book <i>Dell’Historia Naturale</i> by the apothecary Ferrante Imperato from 1599
+                includes the earliest depiction of a cabinet.<sup><a href="#ref20" class="footnote">9</a></sup> The
+                illustration shows a collection of
+                natural history in Naples and one cannot fail to notice a huge crocodile hanging from
+                the ceiling. The big reptile was a very popular and wanted object for such cabinets,
+                since people were fascinated by the exotic animal. Similar to „freak shows“, the notion of exoticism was
+                the selling point, and the crocodile is a good example of the
+                feeling that pieces should evoke in the visitors: the big monster above their heads
+                aroused interest, but also horror, and impressed everyone coming to the room.<sup><a href="#ref50"
+                    class="footnote">10</a></sup>
+                <span class="marginnote">
+                  <a href="content/02_meeres-einhorn_in_bestiarium_rudolfs_ii._1607-1612_original.jpg"
+                    target="_blank"><img
+                      src="content/02_meeres-einhorn_in_bestiarium_rudolfs_ii._1607-1612_original.jpg"
+                      alt="Image of Sea Unicorn" />Sea-unicorn, from Rudolf II’s *Bestiarium*, 1607–1612
+                  </a></span>
+
+                A lot of the wonder rooms had an educational purpose and were trying to explain the
+                world truthfully through arranging the artefacts according to geography or another
+                specific system.<sup><a href="#ref9" class="footnote">11</a></sup> In other cabinets, facts and myths
+                mixed and they also contained
+                fictional creatures.<sup><a href="#ref7" class="footnote">12</a></sup> The wonder rooms of emperor
+                Rudolf II in Prague for example
+                featured paintings of mythical creatures like dragons and unicorns.<sup><a href="#ref20"
+                    class="footnote">13</a></sup>
+              </p>
+
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/03_unicorn_2Bhorn_2Bp._2B285.jpg" target="_blank">
+                    <img src="content/03_unicorn_2Bhorn_2Bp._2B285.jpg" alt="Image of a Unicorn" />Illustration of the mystical
+                    narwhal’s tusk, Museum Wormianum 1655
+                  </a>
+                </span>
+                <span class="marginnote">
+                  <a href="content/04_Vegetable_lamb_(Lee,_1887).jpg" target="_blank">
+                    <img src="content/04_Vegetable_lamb_(Lee,_1887).jpg" alt="Image of Vegetable Lamp" />The
+                    Vegetable
+                    Lamp of Tartary, 1887</a>
+                </span>
+                Back then, it was believed that a narwhal’s tusk was the horn of a unicorn and had
+                medical powers, and the “unicorn horn” was therefore proudly exhibited in wonder
+                rooms. Worm doubted this, since he had never seen it attached to a skull, and later
+                recognized that the horns belonged to narwhals.<sup><a href="#ref28" class="footnote">14</a></sup>
+                However, he also believed in the Scythian Lamb (also called the Vegetable Lamb of
+                Tartary), an animal-plant that would have sheep as fruit and based this on a soft plant
+                in his collection.<sup><a href="#ref46" class="footnote">15</a></sup>
+
+              </p>
+
+              <p class="text_thesis">
+                In general, the objects in a wonder room were classified in two main categories,
+                <i>naturalia</i> and <i>artificialia,</i><sup><a href="#ref9" class="footnote">16</a></sup> both Latin
+                terms.
+                <span class="marginnote">
+                  <a href="content/05_kunsthistorisches-museum-0.jpg" target="_blank">
+                    <img src="content/05_kunsthistorisches-museum-0.jpg" alt="Image of a Rhinoceros" />Frans
+                    Francken the Younger, Chamber
+                    of Art and Curiosities, 1636, Kunsthistorisches
+                    Museum, Vienna Austria</a>
+                </span>
+                <span class="marginnote">
+                  <a href="content/06_Cabinet_of_Curiosities_1690s_Domenico_Remps.jpg" target="_blank">
+                    <img src="content/06_Cabinet_of_Curiosities_1690s_Domenico_Remps.jpg"
+                      alt="Image of a Rhinoceros" />Domenico Remps, Cabinet of Curiosities, 1690,
+                    Museo dell’Opificio delle Pietre Dure, Florence, Italy</a>
+                </span>
+                <i>Naturalia</i> contained everything existing in
+                nature, like skeletons and stuffed animals, plant examples and fossils. It was also
+                popular to create and believe in monsters and rare creatures. Collectors achieved
+                this through combining and arranging different parts of animals together. A
+                subcategory belonging to <i>naturalia</i> was <i>exotica,</i> which described exotic and rare
+                objects from faraway.<sup><a href="#ref9" class="footnote">17</a></sup>
+                They were often collected on journeys and were used to
+                show off how well educated and well-traveled the owner was. Everyone was drawn to
+                luxurious objects, and a cabinet full of exotic things was perfect for entertaining
+                guests and telling stories about adventures in foreign lands. Sometimes these stories
+                were not true though, and the admired items were coming from flea markets instead
+                of dangerous trips.<sup><a href="#ref41" class="footnote">18</a></sup>
+              </p>
+              <p class="text_thesis">
+                The category <i>artificialia </i>consisted of human made objects like art, cultural antiquities
+                and different scientific tools. These science related objects were also called <i>scientifica</i> and
+                were very
+                respected since the knowledge around it was quite new and
+                people were fascinated by its wonders. Another big reason for
+                the popularity of <i>scientifica</i> and the wonder rooms in general was its display of the
+                power of men over the natural world.<sup><a href="#ref9" class="footnote">19</a></sup>
+                Collectors could arrange the objects how they wished and thus, create their own
+                world. The act of putting the whole universe in a cabinet made them feel superior and
+                like the master of the planet. Humans always try to find correlations between and
+                explanations for things happening in the world and we do not like to admit that we do
+                not understand everything. Cabinets of curiosities therefore also had the function of
+                making the world seem smaller and less complicated than it is.<sup><a href="#ref41"
+                    class="footnote">20</a></sup> Were cabinets
+                maybe the beginning of mansplaining?
+
+              </p>
+
+              <p class="text_thesis">
+                However, as innocent as the cabinets seem, they are very much connected to
+                Europe’s colonial past and were driven by the desire to understand and own the
+                whole world.<sup><a href="#ref27" class="footnote">21</a></sup> A lot of the unique objects and specimen
+                were found on colonial trade
+                routes, taken from local inhabitants while not understanding its real cultural history
+                and meaning. The collectors portrayed and organized the objects with their personal
+                perspective on the world in mind, which gave them the control to decide what should
+                be considered as relevant and valuable. These very subjective decisions, biased by
+                the amount of knowledge they had and how many places they had visited, still have implications today.
+                Parts of famous cabinets belong to big museums now and we still
+                can see and feel the outdated hierarchies and a colonial standpoint.<sup><a href="#ref48"
+                    class="footnote">22</a></sup> For instance,
+                museums exhibit art that is considered prestigious and art that is called “primitive”,
+                often coming from colonized cultures and presented with little understanding about
+                their traditions.
+
+              </p>
+              <p class="text_thesis">
+
+                <span class="marginnote">
+                  <a href="content/07_sloane-botany-sheet-full-width.jpg" target="_blank">
+                    <img src="content/07_sloane-botany-sheet-full-width.jpg" alt="Image of a Rhinoceros" />
+                    Cocoa plant brought back from
+                    Jamaica in 1689 by Hans Sloane.</a>
+                </span>
+                A collection that benefited immensely from colonialism and slavery is the one of Sir
+                Hans Sloane, a famous British physician and a well-known collector. He accumulated
+                over 71,000 items, which later became the foundation of the British Museum. Most of
+                his exotic specimen came from Jamaica, a British colony, where he worked as a
+                doctor. He owes a lot of his success and knowledge to the enslaved people from
+                West Africa, who helped him in his search. He also married Elizabeth Langley Rose,
+                the widow of a plantation owner in Jamaica, which meant that he was directly
+                profiting from slavery and could continue with his career.<sup><a href="#ref39"
+                    class="footnote">23</a></sup>
+
+              </p>
+
+              <p class="text_thesis">
+                Another way of thinking inherited from the cabinets is the division between naturalia
+                and artificialia, which became stronger in the 18th century and led to a disconnection
+                between us and nature (spoken from a western standpoint).<sup><a href="#ref48"
+                    class="footnote">24</a></sup> This is mirrored in the
+                way we talk about and treat our planet, distance us from things happening on earth
+                and why some people see geoengineering as a legitimate solution for climate
+                change. Having said that, some museums are starting to delve into their past and are
+                initiating conversations about how the old structures could be rethought.<sup><a href="#ref48"
+                    class="footnote">25</a></sup> </p>
+
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/08_lacma.jpg" target="_blank">
+                    <img src="content/08_lacma.jpg" alt="Image of a Rhinoceros" />LACMA, “The World Made
+                    Wondrous: The Dutch
+                    Collector’s Cabinet and the Politics of Possession”, 2023 – 2024</a>
+                </span>
+                An exhibition that deals with the topic of a colonial past is <i>“The World Made
+                  Wondrous: The Dutch Collector’s Cabinet and the Politics of Possession”</i> at the
+                LACMA museum, curated by Diva Zumaya.<sup><a href="#ref46" class="footnote">26</a></sup> It is showing a
+                fictional cabinet of curiosities by a Dutch merchant from the 17th
+                century, combined with work by contemporary artists like Jennifer Ling
+                Datchuk, Todd Gray, Sithabile Mlotshwa and Uýra Sodoma. Visitors therefore can
+                see old artefacts from the LACMA collection next to pieces that explain the history of
+                slavery behind them as well as the meaning these artefacts had in the countries and
+                cultures they were stolen from. A photograph showing the deforestation of the
+                Amazon Rainforest by Uýra Sodoma for example is shown next to a painting of a
+                plantation from 1655, reminding us of colonial consequences still present in our
+                society. In a wonder room, the collector would show and explain the collection to the
+                audience, at LACMA, an audio guide takes on this role. It is leading visitors through
+                the exhibition and tells stories from people that are usually not represented in big
+                museums and institutions, talking about the oppression, violence, and the many
+                victims it took to acquire these objects.<sup><a href="#ref48" class="footnote">27</a></sup>
+              </p>
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/09_newworld.jpg" target="_blank">
+                    <img src="content/09_newworld.jpg" alt="Image of a Rhinoceros" />“New World Wunderkammer:
+                    A Project by Amalia
+                    Mesa-Bains”, 2013–14, Fowler Museum at UCLA.</a>
+                </span>
+                In 2013 – 2014, the Fowler Museum in California showed the project <i>“New World
+                  Wunderkammer” </i>by the Chicana artist Amalia Mesa-Bains, in which she recreated
+                three cabinets of curiosities based on the histories of indigenous Americas, African
+                people and colonial mestizaje (the mix between Native American, African, and
+                European peoples). Using pieces from the museum’s collection as well as her own artwork, Mesa-Bains is
+                re-establishing the real meanings of the cultural and spiritual
+                objects and giving them equal importance as western art.<sup><a href="#ref16"
+                    class="footnote">28</a></sup>
+              </p>
+
+
+              <h2 id="chapter-2" class="h2_margin">Chapter 2</h2>
+              <h3 class="Chaptername"> Dollhouses</h3>
+              <p class="text_thesis">
+
+                When writing about cabinets of curiosities, it is not possible to oversee how similar
+                cabinet dollhouses from the 17th century look. Originally, these were not intended for
+                kids to play with: instead, they were used to display wealth and could be seen as an
+                alternative to the classic wonder rooms for female collectors.<sup><a href="#ref19"
+                    class="footnote">29</a></sup>
+                <span class="marginnote">
+                  <a href="content/10_petronella.jpg" target="_blank">
+                    <img src="content/10_petronella.jpg" alt="Image of a Rhinoceros" />Dollhouse of
+                    Petronella Oortman, c.1686 – 1710,
+                    Rjksmuseum</a>
+                </span>
+                Dollhouses appeared in the 16th century in northern Europe, mostly in Germany, the
+                Netherlands and England, and were a status symbol for the upper class.
+                While referred to as “Dockenhaus” in Germany, which meant “miniature house”, the
+                Dutch called their models “cabinet houses”. This is a very fitting name, since the
+                houses were built in wooden China cabinets, that were opening at the front and could
+                be locked.<sup><a href="#ref2" class="footnote">30</a></sup>
+              </p>
+              <p class="text_thesis">
+
+                <span class="marginnote">
+                  <a href="content/11_barbie.jpg" target="_blank">
+                    <img src="content/11_barbie.jpg" alt="Image of a Rhinoceros" />Buitendijk, Jaap. Warner
+                    Bros. Barbie Dreamhouse</a>
+                </span>
+                <span class="marginnote">
+                  <a href="content/12_polly.png" target="_blank">
+                    <img src="content/12_polly.png" alt="Image of a Rhinoceros" />Mattel. Polly Pocket Doll
+                    House</a>
+                </span>
+                They rarely were depictions of one’s own house, only the tradition of “baby houses” in
+                England in the 18th century showed a miniature of the real owner’s house, also called
+                Victorian Houses. Dollhouses only became a common toy and an object for kids after
+                the industrial revolution and with the start of mass production, which made them
+                affordable for normal households. They are still very popular among kids, the hype
+                around the Barbie dream house and Polly pocket toys shows this very well.<sup><a href="#ref8"
+                    class="footnote">31</a></sup>
+
+                The fascination for dollhouses does not end with childhood though, there are enough
+                adult fans who collect or even build their own models and companies like Mulvany &
+                Rogers sell exquisite models worth £50,000 for serious buyers.<sup><a href="#ref24"
+                    class="footnote">32</a></sup>
+                However, it is
+                important to delve into the dollhouses from a gender perspective and to understand
+                the female role in it.
+              </p>
+              <p class="text_thesis">
+                Many dollhouses were used for educational purposes for young
+                women and taught them everything that needed to be looked after in a family home.
+                <span class="marginnote">
+                  <a href="content/13_nuremberg.jpg" target="_blank">
+                    <img src="content/13_nuremberg.jpg" alt="Image of a Rhinoceros" />Early Nuremberg Kitchen, circa 1820</a>
+                </span>
+                A modified version of classic dollhouses are “Nuremberg kitchens”, which were made
+                to teach girls how to use a kitchen. Instead of multiple floors, Nuremberg kitchens
+                consisted of a single room with a kitchen set and a lot of pots, pans and other
+                necessary objects. They were mostly made from metal and produced in Germany. It
+                was a clever way to get girls excited about the kitchen space, which was maybe even
+                more important than the practical household skills. Clearly, not all girls automatically
+                thought of their role as caretaker or in the kitchen. Through the captivating miniature
+                model, women learned to see the kitchen as a space for play and delight and
+                accepted the traditional heteronormative future expectations.<sup><a href="#ref32"
+                    class="footnote">33</a></sup>
+              </p>
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/14_ sara.jpg" target="_blank">
+                    <img src="content/14_ sara.jpg" alt="Image of a Rhinoceros" />Dollhouse of Sara Rothé, 1743-1843.
+                    Gemeentemuseum Den Haag.</a>
+                </span>
+                The cabinet houses from the 17th century were an object of luxury and were thought
+                through down to every single detail. They included different materials and
+                handcrafted pieces, and the rooms were as richly decorated as real interiors. This detailed perfection
+                on small scale was what fascinated the viewers and made it
+                a popular hobby for Dutch women of the wealthy class.<sup><a href="#ref43" class="footnote">34</a></sup>
+              </p>
+
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/15_large.jpeg" target="_blank">
+                    <img src="content/15_large.jpeg" alt="Image of a Rhinoceros" />Dollhouse of Petronella de la Court (1624-
+                    1707). Centraal Museum Utrecht.</a>
+                </span>
+                In general, women were expected to spend money wisely and only for domestic
+                reasons. It was usually seen as their husband’s money and the expenses were also
+                overlooked by the husband. Men also believed in a female desire to spend money
+                and therefore guidelines and handbooks for women which warned about
+                unnecessary spending and gave tips on how to properly manage finances were
+                common.<sup><a href="#ref43" class="footnote">35</a></sup> The expensive dollhouses were an exception
+                and an opportunity for privileged
+                women to show their ability to control money and make autonomous decisions. It was
+                probably accepted since the hobby was very much connected to domestic life and
+                the models showed ideal households.<sup><a href="#ref43" class="footnote">36</a></sup>
+                The perfectly organized house demonstrated
+                how well women understood and ran the household, that they had a feeling for
+                quality and craft as well as a good taste in interior design and decoration.<sup><a href="#ref43"
+                    class="footnote">37</a></sup>
+                Not surprisingly though, dollhouses were sometimes still criticized and presented as
+                lavish spending. Despite the craft being of high quality and even though they had
+                much in common with the famous cabinets of curiosities, they were never taken as
+                seriously as the collections of men at that time.<sup><a href="#ref43" class="footnote">38</a></sup>
+              </p>
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/16_lita.jpeg" target="_blank">
+                    <img src="content/16_lita.jpeg" alt="Image of a Rhinoceros" />Lita Tholen-De Ranitz with her Dollhouse, ca.1920</a>
+                </span>
+                <span class="marginnote">
+                  <a href="content/17_emma.jpeg" target="_blank">
+                    <img src="content/17_emma.jpeg" alt="Image of a Rhinoceros" />Queen Emma’s signature in the
+                    miniature guest book, 1911.</a>
+                </span>
+                Like in a “Kunstkammer”, the splendid interior of dollhouses was filled with
+                extravagant materials: silver, ivory, lace, silk, marble and porcelain, some of it coming
+                from trade made in and around colonies.<sup><a href="#ref43" class="footnote">39</a></sup>
+                The little objects were often crafted by the same people who would also create
+                regular size versions. Paintings for example were made by artists and miniature
+                books were real books that you could flick through and read.<sup><a href="#ref30"
+                    class="footnote">40</a></sup>
+                The dollhouse of Lita de Ranitz for instance, which was built in 1910 in The Hague,
+                had a guestbook with a signature of Queen Emma on the front page.
+                The paintings in the miniature villa came from famous painters Lita de Ranitz was
+                friends with, like Toorop, Gabriel, Mauve, Jongkind and Arntzenius.<sup><a href="#ref25"
+                    class="footnote">41</a></sup>
+              </p>
+              <p class="text_thesis">
+
+
+                Another parallel to the cabinet of curiosities is the creation of a microcosm – and the
+                control over it. The miniature houses make people behave differently. You must bend
+                over if you want to see more precisely, and you have to minimize your movements in
+                order not to break anything. The creator knew the house very well of course and
+                therefore could interact effortlessly.<sup><a href="#ref30" class="footnote">42</a></sup> Miniature
+                models also change the perception of
+                time and make viewers think that more time has passed since starting to look at the
+                dollhouse.<sup><a href="#ref30" class="footnote">43</a></sup> This means, as Susan Stewart writes in her
+                book “On Longing”, that
+                miniatures slow down or even stop time and make space for infinite daydreams.<sup><a href="#ref44"
+                    class="footnote">44</a></sup> In my opinion, that is why kids can spend hours playing with a
+                dollhouse, miniature toys
+                or the videogame <i>SIMS.</i>
+                <span class="marginnote">
+                  <a href="content/18_sims.jpeg" target="_blank">
+                    <img src="content/18_sims.jpeg" alt="Image of a Rhinoceros" />Sims™ 4</a>
+                </span>
+                You can create all the scenarios you want and are able to rearrange and redecorate
+                anytime you become tired of your fantasy universe. I remember building houses for
+                my dolls out of my duvet, which never turned out the same, and the process of
+                creating and deciding what should be where was what made playing with them
+                exciting. Dollhouses allowed women to arrange a house and hence their own world in a way
+                they wished it to be – for once, they were the rule makers. Gaston Bachelard writes
+                in Poetics of Space:
+              </p>
+              <p id="quote" class="text_thesis">
+                <i>“The cleverer I am at miniaturizing the world, the better I possess it.”</i><br>
+                (Bachelard, Poetics of space 150)
+              </p>
+              <p class="text_thesis">
+                This describes very well why dollhouses could be seen as a chance for
+                independence: they gave women full control over a little universe and at the same
+                time were a place for imagination.<sup><a href="#ref4" class="footnote">45</a></sup>
+              </p>
+              <h2 id="chapter-3" class="h2_margin">Chapter 3</h2>
+              <h3 class="Chaptername"> Houses of Curiosities</h3>
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/19_Original-Dome Space, photo by Gareth Gardner.jpg" target="_blank">
+                    <img src="content/19_Original-Dome Space, photo by Gareth Gardner.jpg"
+                      alt="Image of a Rhinoceros" />Sir John Soane Museum,
+                      Dome Space</a>
+                </span>
+                <span class="marginnote">
+                  <a href="content/20_Picture-Room-Recess-displaying-Nymph-_C2_A9Derry-Moore.jpg.webp" target="_blank">
+                    <img src="content/20_Picture-Room-Recess-displaying-Nymph-_C2_A9Derry-Moore.jpg.webp"
+                      alt="Image of a Rhinoceros" />Sir John Soane Museum, Picture
+                      Room Recess</a>
+                </span>
+
+                If you take a “Wunderkammer” and a dollhouse and put them together, you will get a
+                house of curiosities. As already mentioned, cabinets of curiosities sometimes were
+                bigger than a piece of furniture, they took the form of rooms and in some cases, even
+                of a whole house.
+                One good example for that is the house of Sir John Soane, a successful British
+                architect and collector of art and architecture. His interest in Classical art started on
+                his Grand Tour (which was very common for wealthy young men at that time), where
+                he visited ancient cities in Italy and Greece. He bought and reworked three
+                neighboring houses in London for the display of his growing collection, that consists of paintings,
+                books, drawings, architectural models and sculptures ranging in size. It
+                is not only the amount of collected pieces that is impressive, but also the whole
+                house also (which was turned into a museum) is an adventure to walk through. Each
+                room looks completely different but is always packed with art and sculptures. The
+                three buildings are connected through corridors, and secret doors and weird lighting
+                make you feel like in a labyrinth. Even though it could appear like a house without
+                any order, Soane thought a lot about the placement of the objects and recomposed
+                the rooms often to find new connections between the art pieces.<sup><a href="#ref33"
+                    class="footnote">46</a></sup> As impressive as
+                this house is, we should keep in mind that also here colonialism was a big factor that helped Soane to
+                acquire all these objects and that he projected his western view on
+                the artworks. I doubt for example, that the sarcophagus of the Egyptian Pharaoh Seti
+                I., which is one of the biggest pieces in Soane’s Musuem, would be exhibited in the
+                same way in Egypt.
+              </p>
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/21_caj.jpg" target="_blank">
+                    <img src="content/21_caj.jpg" alt="Image of a Rhinoceros" />The Museum of Innocence, Box 14</a>
+                </span>
+                <span class="marginnote">
+                  <a href="content/22_vitrine.jpg" target="_blank">
+                    <img src="content/22_vitrine.jpg" alt="Image of a Rhinoceros" />The Museum of Innocence, Box 28</a>
+                </span>
+
+                Another famous House Museum is the <i>Museum of Innocence</i> in Istanbul by the
+                novelist Orhan Pamuk. He had the idea to write a novel and to create a museum as
+                its counterpart. Both tell the love story of Kemal and Füsun, two people living in
+                Istanbul in the 70s and 80s. The museum consists of everyday objects belonging to
+                the characters in the novel, for example an earring Füsun drops, or kitchen ware their
+                families would use. The author collected the items throughout the years on flea
+                markets and antiquity stores and it was important to him that they were authentic and
+                that they represented the real Istanbul of that time. Through showing objects his
+                audience knows very well and can relate to, the story comes more alive. The pieces are exhibited in
+                carefully arranged boxes and vitrines, and Pamuk himself said that
+                the idea was coming from the classic “Wunderkammer”. Each vitrine contains a
+                composition of objects that tell a part of the story.<sup><a href="#ref43" class="footnote">47</a></sup>
+                In the catalogue of his museum
+                called <i>The Innocence of Objects,</i> Pamuk writes about how he figured out that when
+                objects are taken out of their normal surrounding and composed together, they start
+                to interact and get a new meaning.<sup><a href="#ref43" class="footnote">48</a></sup>
+                He also wrote a short manifesto for museums where he argues that the future should
+                focus on smaller and cheaper museums, instead of big institutions representing the
+                state. Point 3 of this manifesto states:
+              </p>
+              <p id="quote" class="text_thesis">
+                <i>“… We all know that the ordinary, everyday stories of
+                  individuals are richer,
+                  more humane, and much more joyful. “</i><br>
+                (Pamuk, The innocence of objects 55)
+              </p>
+              <p id="quote" class="text_thesis">
+                And point 11 of the manifesto says:<br>
+                <i> “The future of museums is inside our own homes.”</i><br>
+                (Pamuk, The innocence of objects 57)
+              </p>
+              <p class="text_thesis">
+
+                The domestic sphere and collecting of curiosities are very much intertwined. One
+                could see living rooms as cabinets of curiosities, decorated with items that we got as
+                gifts, objects we find fascinating or aesthetically pleasing and things we bought on
+                trips, reminding us of the places we visited. These souvenirs are the modern
+                equivalent to the exotic artefacts in wonder rooms. Buying cultural objects without
+                knowing its meaning and using them in another context is cultural appropriation.
+                Unfortunately, a lot of fake souvenirs are sold which are not authentically made by
+                the native population. In some cases, objects are even sold in the wrong region or
+                country, and tourist have no clue about their real point of origin.<sup><a href="#ref22"
+                    class="footnote">49</a></sup>
+              </p>
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/23_living.jpg" target="_blank">
+                    <img src="content/23_living.jpg" alt="Image of a Rhinoceros" />Fabrice Berrux & Bonaldo:
+                    “Cabinet de Curiosité”</a>
+                </span>
+                There is also a trend in interior design that you can observe in trendy cafes or homes
+                from celebrities, where you can find unusual and quirky deco objects displayed.
+                Sometimes there is a backstory to it – and sometimes the object’s purpose is only to
+                intrigue. In both cases, only the person living in the space can tell the visitors more
+                about it.<sup><a href="#ref22" class="footnote">50</a></sup> Further, there are designed bookcases that
+                resemble cabinets of
+                curiosities which are made solely to present decorative items.<sup><a href="#ref15"
+                    class="footnote">51</a></sup>
+                Surrounding ourselves with objects we like or are fascinated by makes sense though,
+                because people we invite to our house immediately get a sense of who we are.
+                Teenage bedrooms are probably the most drastic example here: walls filled with
+                posters and crazy wallpapers almost scream the identity of the resident when
+                entering the room. Architectural historian Gillian Darley for example describes Sir
+                John Soane’s House Museum as an autobiography<sup><a href="#ref12" class="footnote">52</a></sup> and
+                Orhan Pamuk argues that
+                some collectors only collect to create a new identity for themselves.<sup><a href="#ref43"
+                    class="footnote">53</a></sup>
+
+              </p>
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/24_pippi.jpg" target="_blank">
+                    <img src="content/24_pippi.jpg" alt="Image of a Rhinoceros" />Pippi Longstocking, 1969</a>
+                </span>
+                <span class="marginnote">
+                  <a href="content/25_illustration.jpg" target="_blank">
+                    <img src="content/25_illustration.jpg" alt="Image of a Rhinoceros" />Illustration of Pippi Longstocking by
+                    Ingrid Vang Nyman.</a>
+                </span>
+                A house most people have heard about is the Villa Kunterbunt, the weird and
+                wonderful home of Pippi Langstrumpf. In her article <i>“The Collection of Wonders –
+                  Pippi Longstocking’s Cabinet of Curiosities”,</i> Elina Druker compares Pippi’s Home to
+                a “Wunderkammer”. The chaotic house is filled with everyday objects as well as
+                exotic artefacts: seashells, eggs, porcelain figures, pearl necklaces and numerous paintings collected
+                from journeys Pippi and her missing father went on. These
+                peculiar objects mirror Pippi’s peculiar character and underline her crazy stories
+                about travel adventures from her past. Whether these stories are based on truth or
+                fiction does not matter, just like in real curiosity cabinets. After entering Villa
+                Kunterbunt, the inside and the outside world mix and visitors get to see Pippi’s
+                version of it, the one she uniquely created for herself.<sup><a href="#ref17"
+                    class="footnote">54</a></sup> When entering these houses
+                be it in novels, film or in a museum, one understands that they all present their own
+                microcosms.
+
+              </p>
+              <h2 id="chapter-4" class="h2_margin">Chapter 4</h2>
+              <h3 class="Chaptername"> Contemporary Examples and Digital Cabinets</h3>
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/26_marine.jpeg" target="_blank">
+                    <img src="content/26_marine.jpeg" alt="Image of a Rhinoceros" />Dion, Mark. Cabinet of
+                    Marine Debris, 2014.</a>
+                </span>
+
+                The motif of the wonder room is very common again and can be found referenced in
+                a lot of contemporary artworks. Some people also call it the Wonder Room
+                Renaissance.<sup><a href="#ref1" class="footnote">55</a></sup> An artist who uses wonder cabinets often
+                in his work is Mark Dion. He is interested in
+                the way we see and collect nature and how we present the findings of the natural
+                world. Through his installations, he is questioning the current narration and display
+                techniques in big museums and institutions and is introducing a new, more playful
+                and interactive way of exploring and gaining knowledge. His aim is to encourage the
+                viewers to think and engage with information, rather than letting them just be passive
+                consumers.<sup><a href="#ref26" class="footnote">56</a></sup>
+              </p>
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/27_cranbrook.jpg" target="_blank">
+                    <img src="content/27_cranbrook.jpg" alt="Image of a Rhinoceros" />The Cranbrook Hall of Wonders at the Cranbrook
+                    Art Museum</a>
+                </span>
+
+                Another contemporary cabinet was the exhibition <i>“The Cranbrook Hall of Wonders:
+                  Artworks, Objects, and Natural Curiosities”</i> by Laura Mott and Shelley Selim at the
+                Cranbrook Art Museum. Instead of a classic vitrine they used a modular system to
+                display the different objects, so that visitors could see the pieces from different
+                angles. They argued that these changing compositions create new relations
+                between the objects when walking around the installation. The curators also added a
+                new element to the old “Wunderkammer” concept: living performances, which
+                contrasted the still life.<sup><a href="#ref38" class="footnote">57</a></sup>
+              </p>
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/28_all.jpg" target="_blank">
+                    <img src="content/28_all.jpg" alt="Image of a Rhinoceros" />Maurizio Cattelan: All.
+                    Guggenheim Museum, New York.</a>
+                </span>
+                <span class="marginnote">
+                  <a href="content/29_imuur.jpg" target="_blank">
+                    <img src="content/29_imuur.jpg" alt="Image of a Rhinoceros" />Danh Vo, I M U U R 2’
+                    at the Guggenheim Museum, New York.</a>
+                </span>
+
+                Two more intimate collections exhibited in the Guggenheim Museum in New York
+                were Maurizio Cattelan’s <i>“All”</i> <sup><a href="#ref10" class="footnote">58</a></sup> and Danh Vo’s
+                exhibition <i>I M U U R 2</i>. <sup><a href="#ref49" class="footnote">59</a></sup>
+                Cattelan hang a collection of art pieces on ropes in the rotunda of the Guggenheim,
+                which looked like a tragic suicide of objects. Vo was working with the collection by
+                another artist, the painter Martin Wong. The exhibition showed around 4,000 objects,
+                many connected to American pop culture, collected by Wong and his mother Florence
+                Wong Fie, who co-curated this exhibition. Although the exhibitions are not complete
+                archives, they give a glimpse into the life of the artists.
+              </p>
+              <p class="text_thesis">
+                Going back to the concept of the curiosity cabinet is a solution of museums, curators,
+                and artists for presenting knowledge in a more and more complex world. Museums
+                understood that there is not just one way to look at a topic, and an exhibition in the
+                style of a wonder room offers a more open and interactive way of exploring.<sup><a href="#ref1"
+                    class="footnote">60</a></sup> When
+                first starting this thesis, I was not very enthusiastic about cabinets of curiosities, since
+                I was looking at them as another western colonial tradition. While I stress that
+                everyone using a curiosity display should be aware of the colonial history it carries, I
+                now also understand the potential of this type of collection and that it can activate the
+                imagination in a more funny and inclusive way. An exhibition in the style of a cabinet
+                lets viewers make their own connections between objects and discourses and there
+                is not just one fixed interpretation of the subject.<sup><a href="#ref1" class="footnote">61</a></sup>
+                That allows a more personal
+                experience, which I think can make a bigger impact on visitors. </p>
+
+              <p class="text_thesis">
+                <span class="marginnote">
+                  <a href="content/30_depot.jpg" target="_blank">
+                    <img src="content/30_depot.jpg" alt="Image of a Rhinoceros" />Depot Boijmans Van
+                    Beuningen, Rotterdam</a>
+                </span>
+                The <i>Depot Boijmans Van Beuningen</i> in Rotterdam for example is achieving this
+                effect: the art storage facility is showing its whole collection, not just selected pieces, and people
+                can see artworks outside their usual contexts. Visitors can discover new
+                metaphors within the objects and can even create their own collections of artworks in
+                the app, which makes them a co-curator.<sup><a href="#ref13" class="footnote">62</a></sup>
+              </p>
+              <p class="text_thesis">
+
+                This multiplicity and not being satisfied with just one view comes from being used to
+                the digital world.<sup><a href="#ref1" class="footnote">63</a></sup> We are living in a time where we
+                can look up everything, can
+                consume news and images from the whole world and are able to compare different
+                sources – all of which leads to being overwhelmed and makes it impossible to keep
+                an overview of everything. The wonder room is a good tool for showing complicated
+                connections visually and making people understand little fragments of today’s world.
+                The internet not only changed our consumption of information, but it could also be
+                perceived as a platform for a new kind of cabinet of curiosities.<sup><a href="#ref1"
+                    class="footnote">64</a></sup>
+                We all have private
+                collections on Pinterest and Instagram and are saving files in our folders, sometimes
+                with a very precise folder structure. As in the historic cabinet, we are also collecting
+                things we consider beautiful and unique. For some people it is fashion inspiration,
+                others have folders full of recipes and screenshots from movies. We therefore again
+                build a little personal world of things we like, a digital universe to our liking, our
+                bubble. The cabinet becomes the bubble of curiosities.
+                Whether analogue or digital, we like to collect things that matter to us and that help
+                us to build or understand our identity. Nevertheless, we shouldn’t just stay in our
+                familiar bubble, but also try to be open to other people’s cabinets – the purpose of a
+                wonder room overall was not only to collect, but also to show and share these ideas. In the digital
+                space, a development towards shared cabinets could support
+                community and would resolve in collections not being biased by one person.
+                <span class="marginnote">
+                  <a href="content/31_arena.png" target="_blank">
+                    <img src="content/31_arena.png" alt="Image of a Rhinoceros" />Screenshot of my Are.na Collection</a>
+                </span>
+                One platform that comes to my mind is <i>are.na,</i> where users can collect and save
+                images they like. The items are usually linked to its original source, and you can also
+                see in what other collections they appear. This cross-referencing makes the search
+                and collecting experience fair, respectful, and interactive. The biggest difference
+                though is that the digital cabinet here is not closed off. You can access other cabinets
+                from it, and thus new concepts and contradicting ideas. This hints to a universe that
+                is bigger than one’s own collection, and in my opinion a healthy way to acknowledge
+                that we do not understand and cannot collect the whole world.
+              </p>
+              <h2 id="conclusion">Conclusion</h2>
+              <p class="text_introduction">
+                Upon exploring the different forms of curiosity cabinets, we can see a clear pattern of
+                collecting being tightly connected to our worldviews, whether the rational world or the
+                fantasy one in our dreams.
+                We collect things from our environment that we regard as beautiful or significant to
+                us, and that captivate us in one way or another. We keep them to feel closer to
+                ourselves, to understand the world around us and to also show other people our
+                identity. Through arranging our collections in cabinets, rooms and houses, we are
+                building our own little universe in which we decide the rules and where we feel safe.
+                These individual microcosms give us space for reverie and allow us to imagine
+                different worlds and alternative paths. I think that this escapism to a world where
+                everything is possible is important and can help to recharge energy and be creative.
+                However, in order not to just stay in our bubble and hide in our microcosm from the
+                real world, our wonder rooms never should be completely done, but instead stay
+                ready for redecoration, new ideas, change and development. The doors from our
+                cabinets should stay wide open.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="wrapper">
+          <div class="white">
+            <div class="text">
+              <h2 id="chapter-2">Bibliography</h2>
+              <div id="highlight" class="references_flex">
+                <div id="ref1" class="references">
+                  <span class="color_number">55 | 60 | 61 | 63 | 64</span> Adamopoulou, Areti & Solomon, Esther. ARTISTS-AS-CURATORS IN MUSEUMS: OBSERVATIONS ON CONTEMPORARY
+                  WUNDERKAMMERN. 2016, Thema.. 4. 35-65
+                </div>
+                <div id="ref2" class="references">
+                  <span class="color_number">30</span> “A History of Dollhouses.” Mount Prospect Historical Society, 12 Nov. 2020,
+                  www.mtphist.org/a-history-of-dollhouses/.
+                </div>
+                <div id="ref3" class="references">
+                  Bachelard, Gaston. Poetics of Space. Beacon Press, U.S., 1958.
+                </div>
+                <div id="ref4" class="references">
+                  <span class="color_number">45</span> Begiato, Joanne. “Controlling a Small World: Dolls’ Houses and Gender Roles.” Joanne Begiato
+                  Muses on History, 23 July 2019,
+                  jbhist.wordpress.com/2015/11/08/controlling-a-small-world-dolls-houses-and/.
+                </div>
+                <div id="ref5" class="references">
+                  <span class="color_number">59</span> Brinson, Katherine. “The Hugo Boss Prize 2012: Danh Vo.” The Guggenheim Museums and
+                  Foundation, www.guggenheim.org/exhibition/the-hugo-boss-prize-2012-danh-vo.
+                  Accessed 1 Feb. 2024.
+                </div>
+                <div id="ref6" class="references">
+                  <span class="color_number">14</span> Byrnes, Laurel. “Ole Worm’s Cabinet of Wonder: Natural Specimens and Wondrous Monsters.”
+                  Biodiversity Heritage Library, 2 May 2018,
+                  blog.biodiversitylibrary.org/2017/05/ole-worms-cabinet-ofwonder-
+                  natural-specimens-and-wondrous-monsters.html.
+                </div>
+                <div id="ref7" class="references">
+                  <span class="color_number">12</span> “Cabinet of Curiosities.” Wikipedia, Wikimedia Foundation, 3 Jan. 2024,
+                  en.wikipedia.org/wiki/Cabinet_of_curiosities.
+                </div>
+                <div id="ref8" class="references">
+                  <span class="color_number">31</span> Carver, Alicia. “A Brief History of Early Dollhouses.” The Doll Carvers, The Doll Carvers,
+                  28 Sept. 2021, www.thedollcarvers.com/victorias-collection/the-history-of-early-dollhouses-fr3j8.
+                </div>
+                <div id="ref9" class="references">
+                  <span class="color_number">7 | 11 | 16 | 17 | 19</span> Chaliakopoulos, Antonis. “The Pre-Modern Museum: What Is A Cabinet Of Curiosities?”
+                  The Collector, 3 Oct. 2023, www.thecollector.com/cabinet-of-curiosities-museum-wunderkammer/.
+                </div>
+                <div id="ref10" class="references">
+                  <span class="color_number">58</span> Chin, Andrea. “Maurizio Cattelan: All Retrospective at Guggenheim, New York.” Designboom,
+                  8 Nov. 2011, www.designboom.com/art/maurizio-cattelan-all-retrospective-at-guggenheim-new-york/.
+                </div>
+                <div id="ref11" class="references">
+                  Conley, Katharine. What Makes a Collection Surrealist: Twentieth-Century Cabinets of Curiosities in
+                  Paris and Houston (2012). Journal of Surrealism and the Americas, 6(1), 1-23.
+                  https://scholarworks.wm.edu/aspubs/25
+                </div>
+                <div id="ref12" class="references">
+                  <span class="color_number">52</span> Darley, Gillian. “When Is a House an Autobiography? Exploring Sir John Soane’s Museum as The
+                  Book of His Life.” House & Garden, 24 Mar. 2022,
+                  www.houseandgarden.co.uk/article/sir-john-soanes-museum.
+                </div>
+                <div id="ref13" class="references">
+                  <span class="color_number">62</span> “Depot Boijmans Van Beuningen.” Museum Boijmans Van Beuningen,
+                  www.boijmans.nl/en/depot. Accessed 15 Feb. 2024.
+                </div>
+                <div id="ref14" class="references">
+                  <span class="color_number">1 | 6</span> Dillon, Andrew. “Why Do People Collect? The Psychologist’s View.” Art Basel, 1 Mar. 2024,
+                  www.artbasel.com/stories/survey-global-collectors-art-basel-professor-andrewdillon-
+                  university-of-texas?lang=en.
+                </div>
+                <div id="ref15" class="references">
+                  <span class="color_number">51</span> Display Treasured Finds in a Modern Modular Cabinet of Curiosities. Dornob, 29 Apr. 2020,
+                  dornob.com/display-treasured-finds-in-a-modern-modular-cabinet-of-curiosities/.
+                </div>
+                <div id="ref16" class="references">
+                  <span class="color_number">28</span> Durón, Maximilíano. “How to Altar the World: Amalia Mesa-Bains’s Art Shifts the Way We See Art
+                  History.” ARTnews.Com, 9 Jan. 2020,
+                  www.artnews.com/artnews/news/icons-amalia-mesa-bains-9988/.
+                </div>
+                <div id="ref17" class="references">
+                  <span class="color_number">54</span> Druker, Elina. “The Collection of Wonders: Pippi Longstocking’s Cabinet of Curiosities.” Kids+media :
+                  Zeitschrift Für Kinder- Und Jugendmedienforschung, 1 Mar. 2022,
+                  https://doi.org/10.54717/kidsmedia.12.1.2022.2.
+                </div>
+                <div id="ref18" class="references">
+                  “Exhibition / ‘Curiosity: Art and the Pleasures of Knowing.’” CABINET,
+                  www.cabinetmagazine.org/exhibitions/<br>dillon_curiosityartandthepleasuresofknowing.php.
+                  Accessed 4 Feb. 2024.
+                </div>
+                <div id="ref19" class="references">
+                  <span class="color_number">29</span> Fiore, Julia. “Peek inside the Intricate Worlds of Art History’s Most Spectacular Dollhouses.” The 7
+                  Most Important Dollhouses in Art History , 9 Oct. 2018,
+                  www.artsy.net/article/artsy-editorial-peekinside-
+                  intricate-worlds-art-historys-spectacular-dollhouses.
+                </div>
+                <div id="ref20" class="references">
+                  <span class="color_number">8 | 9 | 13</span> Galambosova, Caroline. “What Is a Wunderkammer? Best Cabinets of Curiosities.” DailyArt Magazine,
+                  22 Dec. 2023, www.dailyartmagazine.com/cabinets-of-curiosities/.
+                </div>
+                <div id="ref21" class="references">
+                  <span class="color_number">58</span> Grau, Donatien. “Maurizio Cattelan: All.” Flash Art, 9 Nov. 2015,
+                  flash---art.com/article/maurizio-cattelan-all/.
+                </div>
+                <div id="ref22" class="references">
+                  <span class="color_number">49 | 50</span> Hayward, Stephen. “The Cabinet of Curiosities 2.0.” Academia.Edu, 2 Sept. 2018,
+                  www.academia.edu/37330710/ THE_CABINET_OF_CURIOSITIES_2_0.
+                </div>
+                <div id="ref23" class="references">
+                  “John Soane’s House.” Architects’ Own Houses,
+                  enso.readymag.com/architects-own-houses/home-of-john-soane/. Accessed 12 Jan. 2024.
+                </div>
+                <div id="ref24" class="references">
+                  <span class="color_number">32</span> Joseph, Elizabeth. “DILLY DOLLYING.” The Doll’s House Is Far from a Childhood Fantasy for
+                  Elizabeth Joseph, THE WORLD OF INTERIORS, 21 July 2023,
+                  www.worldofinteriors.com/story/elizabeth-joseph.
+                </div>
+                <div id="ref25" class="references">
+                  <span class="color_number">41</span> Klein, kleiner, groots. De poppenhuizen van jonkvrouw Lita de Ranitz, 18.11. 2023 – 01.9. 2024,
+                  Haags Historisch Museum, Den Haag.
+                </div>
+                <div id="ref26" class="references">
+                  <span class="color_number">56</span> “Mark Dion: Misadventures of a 21st-Century Naturalist.” Tanya Bonakdar Gallery,
+                  Tanya Bonakdar Gallery.
+                </div>
+                <div id="ref27" class="references">
+                  <span class="color_number">21</span> Mauney, Anna Claire. “The Cabinet of Curiosities & Colonialism.” Art & Object, 30 Mar. 2023,
+                  www.artandobject.com/news/cabinet-curiosities-colonialism.
+                </div>
+                <div id="ref28" class="references">
+                  <span class="color_number">14</span> Melhuish, Fiona. “A Cabinet of Curiosities : Ole Worm’s ‘Museum Wormianum’ (1655).” Collections
+                  Special Collections, 12 May 2020,
+                  collections.reading.ac.uk/special-collections/2020/05/12/a-cabinetof-
+                  curiosities-ole-worms-museum-wormianum-1655/.
+                </div>
+                <div id="ref29" class="references">
+                  <span class="color_number">3 | 4 | 5</span> Mueller, Shirley M. “Collecting: An Urge That’s Hard to Resist.” Psychology Today, 29 Oct. 2020,
+                  www.psychologytoday.com/us/blog/the-mind-collector/202010/collecting-urge-s-hard-resist.
+                </div>
+                <div id="ref30" class="references">
+                  <span class="color_number">40 | 42 | 43</span> Nakamura, Jun P. “Small Worlds: Making Sense of the Microcosm in Dutch Seventeenth-Century
+                  Dollhouses.” Arts in Society: Academic Rhapsodies, Leiden University Centre for the Arts in Society,
+                  2020.
+                </div>
+                <div id="ref31" class="references">
+                  <span class="color_number">28</span> “New World Wunderkammer: A Project by Amalia Mesa-Bains.” Fowler Museum at UCLA,
+                  23 Feb. 2022, fowler.ucla.edu/exhibitions/new-world-wunderkammer-a-project-by-amalia-mesa-bains/.
+                </div>
+                <div id="ref32" class="references">
+                  <span class="color_number">33</span> “Nuremberg Kitchen.” Wikipedia, Wikimedia Foundation, 1 Sept. 2022,
+                  en.wikipedia.org/wiki/Nuremberg_kitchen.
+                </div>
+                <div id="ref33" class="references">
+                  <span class="color_number">46</span> “Our History.” Sir John Soane’s Museum, 30 May 2022, www.soane.org/about/our-history.
+                </div>
+                <div id="ref34" class="references">
+                  <span class="color_number">2 | 6 | 47 | 48 | 53</span> Pamuk, Orhan. The Innocence of Objects: The Museum of Innocence, Istanbul. Abrams, 2012.
+                </div>
+                <div id="ref35" class="references">
+                  <span class="color_number">23</span> Pavid, Katie. “Hans Sloane: Physician, Collector and Botanist.” Natural History Museum,
+                  www.nhm.ac.uk/discover/hans-sloane-physician-collector-botanist.html. Accessed 12 Jan. 2024.
+                </div>
+                <div id="ref36" class="references">
+                  Roberts, Donna. “‘Critical Curiosity: Surrealism and the History and Legacy of Its Method’.
+                  Conference Curiosity 2:0 The Cabinet of Curiosities in Contemporary Art. Hochschule Für Bildende
+                  Künste Dresden, 16-17.1.2015.” Academia.Edu, 1 Jan. 2015.
+                </div>
+                <div id="ref37" class="references">
+                  <span class="color_number">59</span> Russeth, Andrew. “‘The Hugo Boss Prize 2012: Danh Vo, I M U U R 2’ at the Guggenheim Museum.”
+                  Observer, 19 Mar. 2013,
+                  observer.com/2013/03/the-hugo-boss-prize-2012-danh-vo-i-m-u-u-r-2-at-theguggenheim-
+                  museum/#slide0.
+                </div>
+                <div id="ref38" class="references">
+                  <span class="color_number">57</span> Sharp, Sarah Rose. “Curating a Contemporary Cabinet of Curiosities.” Hyperallergic, 5 Mar. 2015,
+                  hyperallergic.com/188131/curating-a-contemporary-cabinet-of-curiosities/.
+                </div>
+                <div id="ref39" class="references">
+                  <span class="color_number">23</span> “Sir Hans Sloane.” The British Museum,
+                  www.britishmuseum.org/about-us/british-museum-story/sir-hans-sloane. Accessed 12 Jan. 2024.
+                </div>
+                <div id="ref40" class="references">
+                  <span class="color_number">56</span> Simpkiss, Jane. “Curiosity, Collecting and Cabinets - An Nterview with Mark Dion.” The Courtauldian,
+                  The Courtauldian, 2 Apr. 2018,
+                  www.courtauldian.com/single-post/2018/04/02/curiosity-collecting-andcabinets-
+                  an-interview-with-mark-dion.
+                </div>
+                <div id="ref41" class="references">
+                  <span class="color_number">18 | 20</span> Sotheby’s Institute of Art. “Cabinets of Curiosities and The Origin of Collecting.” Sotheby’s
+                  Institute of Art,
+                  sothebysinstitute.com/news-and-events/news/cabinets-of-curiosities-and-the-origin-of-collecting/.
+                  Accessed 22 Feb. 2024.
+                </div>
+                <div id="ref42" class="references">
+                  <span class="color_number">49</span> Spurrell, Megan. “What Role Do Souvenirs Play in Cultural Appropriation?” Condé Nast Traveler,
+                  Condé Nast Traveler, 7 Jan. 2021,
+                  www.cntraveler.com/story/what-role-do-souvenirs-play-in-cultural-appropriation.
+                </div>
+                <div id="ref43" class="references">
+                  <span class="color_number">34 | 35 | 36 | 37 | 38 | 39</span> Skelly, Julia, and Michelle Moseley-Christian. “‘Consuming Excess: Pronk Poppenhuisen and the
+                  Dollhouses of Sara Rothé.’” The Uses of Excess in Visual and Material Culture, 1600-2010,
+                  Routledge, Taylor & Francis Group, London, 2018, pp. 63–88.
+                </div>
+                <div id="ref44" class="references">
+                  <span class="color_number">44</span> Stewart, Susan. On Longing: Narratives of the Miniature, the Gigantic, the Souvenir, the Collection.
+                  Duke University Press, 1993.
+                </div>
+                <div id="ref45" class="references">
+                  <span class="color_number">2</span> “The Psychology of Collecting.” Interview with Orhan Pamuk, Big Think, 30 Sept. 2021,
+                  https://bigthink.com/videos/the-psychology-of-collecting/. Accessed 12 Jan. 2024.
+                </div>
+                <div id="ref46" class="references">
+                  <span class="color_number">26</span> “The World Made Wondrous: The Dutch Collector’s Cabinet and the Politics of Possession.” LACMA,
+                  www.lacma.org/art/exhibition/world-made-wondrous-dutch-collectors-cabinet-and-politics-possession.
+                  Accessed 19 Feb. 2024.
+                </div>
+                <div id="ref47" class="references">
+                  <span class="color_number">15</span> “Vegetable Lamb of Tartary.” Wikipedia, Wikimedia Foundation, 11 Sept. 2023,
+                  en.wikipedia.org/wiki/Vegetable_Lamb_of_Tartary.
+                </div>
+
+                <div id="ref48" class="references">
+                  <span class="color_number">22 | 24 | 25 | 27</span> Wallentine, Anne. “How Cabinets of Curiosities Laid the Foundation for Modern Museums.”
+                  Smithsonian.Com, Smithsonian Institution, 16 Nov. 2023,
+                  www.smithsonianmag.com/history/how-cabinets-of-curiosities-laid-the-foundation-for-modern-museums-180983265/.
+                </div>
+                <div id="ref49" class="references">
+                  <span class="color_number">59</span> Wong, Ryan. “Charming Stuff: Danh Vo and Martin Wong.” Hyperallergic, 1 Apr. 2013,
+                  hyperallergic.com/67577/charming-stuff-danh-vo-and-martin-wong/.
+                </div>
+                <div id="ref50" class="references">
+                  <span class="color_number">10</span> Zhang, Peter. “Crocodiles — the Singular Beast in the Renaissance Cabinet.” Wonders of Nature and
+                  Artifice, 11 Dec. 2017, wonder-cabinet.sites.gettysburg.edu/2017/cabinet/the-singular-beast/.
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+
+
+    <script type="module" src="assets/js/index.js"></script>
+  </article>
+</body>
+
+</html>
