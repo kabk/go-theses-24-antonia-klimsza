@@ -3,8 +3,8 @@ body {
   font-family: "AveriaSerifLibre-Regular", "AveriaSerifLibre-BoldItalic", "AveriaSerifLibre-BoldItalic", "AveriaSerifLibre-Italic", "CrimsonText-Italic", "CrimsonText-Regular";
   /* background-color:rgb(226, 173, 255); */
 
-  background-color: rgb(233, 207, 255);
-  /* background-color: rgb(205, 221, 255); */
+  /* background-color: rgb(233, 207, 255); */
+  background-color: rgb(205, 221, 255);
 
 
   overflow: hidden;
