@@ -37,7 +37,15 @@
       document.querySelector('.rightdoor').addEventListener('click', function () {
         slideDoors();
       });
+
+      document.addEventListener('scroll', function () {
+      // Check if the user has scrolled to a certain point on the document
+      // For example, if you want to trigger the doors effect when the user has scrolled 500px down:
+      if (document.documentElement.scrollTop > 500 || document.body.scrollTop > 500) {
+        slideDoors();
+      }
     });
+  });
 
     // –––
 
@@ -68,7 +76,22 @@
         nav.classList.toggle('opened');
         //nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
       });
+
+      const navigationLinks = document.querySelectorAll('.navigation');
+
+      window.addEventListener('scroll', function () {
+        console.log('Scroll event triggered');
+      // Check if the user has scrolled to a certain point on the document
+      // For example, if you want to trigger the doors effect when the user has scrolled 500px down:
+      if (window.scrollY > 500) {
+        slideDoors();
+      }
     });
+  });
+
+
+
+  
 
 
 
