@@ -79,19 +79,16 @@
 
       const navigationLinks = document.querySelectorAll('.navigation');
 
-      window.addEventListener('scroll', function () {
-        console.log('Scroll event triggered');
-      // Check if the user has scrolled to a certain point on the document
-      // For example, if you want to trigger the doors effect when the user has scrolled 500px down:
-      if (window.scrollY > 500) {
-        slideDoors();
-      }
+      navigationLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          menuToggle.click(); // Trigger the menuToggle function when a navigation link is clicked
+        });
+      });
+
+
+
+
     });
-  });
-
-
-
-  
 
 
 
