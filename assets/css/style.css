@@ -57,7 +57,7 @@ i {
 }
 
 .references_flex{
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
 }
 
 /* @keyframes mymove {
@@ -378,6 +378,16 @@ nav {
 
 }
 
+.name {
+  text-align: center;
+  font-size: clamp(10px, 1.1vw, 11rem);
+  line-height: clamp(0.8rem, 1.3vw, 1.7rem);
+  font-family: "Arial-BoldMt";
+  margin-top: 9rem;
+  color: rgb(233, 207, 255);
+
+}
+
 .color_number {
   color: #969362;
 }
@@ -654,6 +664,14 @@ img {
 
   .column_left {
     z-index: 5;
+  }
+
+  .references_flex{
+    margin-bottom: 2rem;
+  }
+
+  .name{
+    margin-top: 5rem;
   }
 
   nav {
